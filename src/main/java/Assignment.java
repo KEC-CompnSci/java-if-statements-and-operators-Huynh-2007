@@ -10,7 +10,14 @@ public class Assignment {
      */
     public static double calculateMovieNight() {
         // TODO: Implement this method
-        return 0.0;
+
+        // Declaring prices as double variables
+        double adultTicket = 12.5;
+        double childTicket = 8;
+        double largePopcorn = 7.25;
+        
+        // Returning the amount of items sold multiplied by its type of item, then adding them all together
+        return ((3 * childTicket) + (2 * adultTicket) + (1 * largePopcorn));
     }
 
     /**
@@ -21,7 +28,17 @@ public class Assignment {
      */
     public static boolean canRentCar(int age) {
         // TODO: Implement this method
-        return false;
+
+        // An inequality to check whether they meet the age criteria
+        if (age < 25) {
+            return false; 
+            }
+
+        if (age >= 25) {
+            return true;
+            }
+
+        return false; // Can't have conditional return statements only. This will appear in every exercise 
     }
 
     /**
@@ -32,6 +49,15 @@ public class Assignment {
      */
     public static boolean isValidPasswordLength(String password) {
         // TODO: Implement this method
+
+        // .length() returns the amount of characters in a given string, then an inequality is used to check whether the password is long enough.
+        if (password.length() >= 8) {
+            return true;
+            }
+        if (password.length() < 8) {
+            return false;
+            }
+
         return false;
     }
 
@@ -44,6 +70,15 @@ public class Assignment {
      */
     public static boolean needsOilChange(int mileage, int lastChangeMileage) {
         // TODO: Implement this method
+
+        // Checks if it has been 5000 miles since your last change, noted as (lastChangeMileage + 5000), then you need a change if your current mileage is equal to or more than that amount.
+        if (lastChangeMileage + 5000 <= mileage) {
+            return true;
+            }
+        if (lastChangeMileage + 5000 > mileage) {
+            return false;
+            }
+        
         return false;
     }
 
@@ -54,6 +89,15 @@ public class Assignment {
      */
     public static String getDivisibleByThreeMessage(int number) {
         // TODO: Implement this method
+
+        // The "%" is an operator that returns the remainder of the left value divided by the right value, rather than the value itself. Any number that is divisible by 3 and gives an integer value will have a remainder of 0, which is what I'm checking for.
+        if (number % 3 == 0) {
+            return "Divisible by 3";
+            }
+        if (number %3 != 0) {
+            return ""; // See line 88 on what I'm instructed to return
+            }
+        
         return "";
     }
 
@@ -66,7 +110,15 @@ public class Assignment {
      */
     public static String getLeapYearMessage(int year) {
         // TODO: Implement this method
-        return "";
+
+        if (year % 4 == 0) { // The same logic from exercise 3 applies here.
+            return "Leap Year";
+            }
+        if (year % 4 != 0 || ((year % 100 == 0) && (year % 400 != 0))) { // For the second part of this if statement. see line 109.
+            return "Not Leap Year";
+            }
+        
+        return "Not Leap Year";
     }
 
     /**
@@ -77,6 +129,19 @@ public class Assignment {
      */
     public static String getTicketPriceCategory(int age) {
         // TODO: Implement this method
-        return "";
+
+        if (age < 5) {
+            return "Free";
+            }
+        if (age >= 13 || age <= 21) {
+            return "Student Price";
+            }
+        if (age >= 22) {
+            return "Adult Price";
+            }
+        
+        return "Adult Price";
     }
+
+
 }

@@ -112,9 +112,14 @@ public class Assignment {
         // TODO: Implement this method
 
         if (year % 4 == 0) { // The same logic from exercise 3 applies here.
+
+            if ((year % 100 == 0) && (year % 400 != 0)) {
+                return "Not Leap Year"; // For the second part of this if statement. see line 109.
+                }
+
             return "Leap Year";
-            }
-        if (year % 4 != 0 || ((year % 100 == 0) && (year % 400 != 0))) { // For the second part of this if statement. see line 109.
+        }
+        if (year % 4 != 0) { 
             return "Not Leap Year";
             }
         
@@ -133,13 +138,16 @@ public class Assignment {
         if (age < 5) {
             return "Free";
             }
-        if (age >= 13 || age <= 21) {
+        if (age >= 5 && age  <= 12) {
+            return "Child Price";
+            }    
+        if (age >= 13 && age <= 21) {
             return "Student Price";
             }
         if (age >= 22) {
             return "Adult Price";
             }
-        
+            
         return "Adult Price";
     }
 
